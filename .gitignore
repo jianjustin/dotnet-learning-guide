@@ -1,9 +1,0 @@
-﻿################################################################################
-# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
-################################################################################
-
-/UnitTestProject/obj/Debug/netcoreapp3.1
-/UnitTestProject/.vs/UnitTestProject/v16/.suo
-/UnitTestProject/bin/Debug/netcoreapp3.1
-/UnitTestProject/MySql
-/UnitTestProject/.vs/UnitTestProject
