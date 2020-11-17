@@ -19,5 +19,14 @@ namespace RepositoryTest
             }
             Assert.IsTrue(true);
         }
+
+        [TestMethod]
+        public void QueryUserTest()
+        {
+            var connection = MySQLConnectionApp.GetConnection();
+            connection.Open();
+            MySQLQueryApp.QueryUser(connection);
+
+        }
     }
 }
