@@ -26,7 +26,16 @@ namespace RepositoryTest
             var connection = MySQLConnectionApp.GetConnection();
             connection.Open();
             MySQLQueryApp.QueryUser(connection);
+            connection.Close();
+        }
 
+        [TestMethod]
+        public void InsertUserTest()
+        {
+            var connection = MySQLConnectionApp.GetConnection();
+            connection.Open();
+            MySQLQueryApp.InsertUser(connection);
+            connection.Close();
         }
     }
 }

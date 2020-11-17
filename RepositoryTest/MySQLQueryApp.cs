@@ -21,5 +21,16 @@ namespace RepositoryTest
 
             transaction.Commit();
         }
+
+        public static void InsertUser(MySqlConnection connection)
+        {
+            string sql = @"insert into user(name,password)values(?name,?password)";
+            MySqlParameter[] msp = new MySqlParameter[]
+            {
+                    new MySqlParameter("?name","jian"),
+                    new MySqlParameter("?password","password")
+            };
+            MySqlHelper.ExecuteNonQuery(connection, sql, msp);
+        }
     }
 }
