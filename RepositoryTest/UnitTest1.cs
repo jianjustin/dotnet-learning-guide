@@ -1,7 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace MySQLRepositoryProject
+namespace RepositoryTest
 {
     [TestClass]
     public class UnitTest1
