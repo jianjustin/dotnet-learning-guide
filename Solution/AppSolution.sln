@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryTest", "..\src\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreApp", "..\src\EFCoreApp\EFCoreApp.csproj", "{DFE203E4-EF5B-4707-BAC0-71F1C580CEBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebApp", "SimpleWebApp\SimpleWebApp.csproj", "{8D68549A-9EC4-4D3D-98A0-690A420196B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleWebApp", "..\src\SimpleWebApp\SimpleWebApp.csproj", "{1848B5AE-DB89-4AB3-9626-9BF8356310E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{DFE203E4-EF5B-4707-BAC0-71F1C580CEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFE203E4-EF5B-4707-BAC0-71F1C580CEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFE203E4-EF5B-4707-BAC0-71F1C580CEBE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D68549A-9EC4-4D3D-98A0-690A420196B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D68549A-9EC4-4D3D-98A0-690A420196B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D68549A-9EC4-4D3D-98A0-690A420196B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D68549A-9EC4-4D3D-98A0-690A420196B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1848B5AE-DB89-4AB3-9626-9BF8356310E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1848B5AE-DB89-4AB3-9626-9BF8356310E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1848B5AE-DB89-4AB3-9626-9BF8356310E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1848B5AE-DB89-4AB3-9626-9BF8356310E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

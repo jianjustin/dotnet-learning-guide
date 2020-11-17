@@ -8,7 +8,10 @@ namespace EFCoreApp
 {
     public class MainApp
     {
-        
+        public static void Main(string[] args)
+        {
+
+        }
         
     }
 }
