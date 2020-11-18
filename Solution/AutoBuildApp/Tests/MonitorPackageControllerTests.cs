@@ -45,6 +45,10 @@ namespace AutoBuildApp.Tests
             MonitorPackageController.Instance.GetdeployLog();
         }
 
+        [TestMethod]
+        public void RemoveDeployLogTest()
+        {
 
+        }
     }
 }
