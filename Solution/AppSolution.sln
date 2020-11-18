@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreApp", "..\src\EFCoreA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleWebApp", "..\src\SimpleWebApp\SimpleWebApp.csproj", "{1848B5AE-DB89-4AB3-9626-9BF8356310E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoBuildApp", "AutoBuildApp\AutoBuildApp.csproj", "{6E672A6E-BC4A-49AB-AB96-4044F0A9608B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1848B5AE-DB89-4AB3-9626-9BF8356310E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1848B5AE-DB89-4AB3-9626-9BF8356310E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1848B5AE-DB89-4AB3-9626-9BF8356310E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E672A6E-BC4A-49AB-AB96-4044F0A9608B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E672A6E-BC4A-49AB-AB96-4044F0A9608B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E672A6E-BC4A-49AB-AB96-4044F0A9608B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E672A6E-BC4A-49AB-AB96-4044F0A9608B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

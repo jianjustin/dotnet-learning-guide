@@ -4,6 +4,8 @@ using SimpleWebApp.Models;
 
 namespace SimpleWebApp.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class UserController : ControllerBase
     {
         private IUserRepository AlanDao;
@@ -13,6 +15,7 @@ namespace SimpleWebApp.Controllers
             AlanDao = alanDao;
         }
 
+        
         //插入数据
         public ActionResult<string> Create(string name, string password)
         {
