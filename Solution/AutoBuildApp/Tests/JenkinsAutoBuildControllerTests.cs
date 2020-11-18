@@ -11,7 +11,6 @@ namespace AutoBuildApp.Tests
         [TestMethod]
         public void BuildJenkinsJobTest()
         {
-            //TODO 能够联通但是不能构建成功
             JenkinsAutoBuildController.BuildJenkinsJob();
         }
 
