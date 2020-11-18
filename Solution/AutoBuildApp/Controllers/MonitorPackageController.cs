@@ -79,6 +79,103 @@ namespace AutoBuildApp.Controllers
             var result = reader.ReadToEnd();
         }
 
+        public void GetJobVersionList()
+        {
+            var url = MonitorPackageUrl.Base_Url + MonitorPackageUrl.GetJobVersionList_Url;
+            HttpWebRequest request = HttpWebRequest.CreateHttp(url);
+            request.Method = "GET";
+            request.ContentType = "application/json";
+            request.CookieContainer = cookieContainer;
+            BuildCookie();
+
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            var result = reader.ReadToEnd();
+        }
+
+        public void UploadFileVersion(string VersionFile)
+        {
+            var url = MonitorPackageUrl.Base_Url + MonitorPackageUrl.UploadFileByShare_Url;
+            HttpWebRequest request = HttpWebRequest.CreateHttp(url);
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.CookieContainer = cookieContainer;
+            BuildCookie();
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendFormat("&{0}={1}", "fileShareAddress", VersionFile);
+            stringBuilder.AppendFormat("&{0}={1}", "deployType", "ESBHotFix");
+            byte[] buffer = Encoding.UTF8.GetBytes(stringBuilder.ToString().Trim('&'));
+
+            Stream requestStream = request.GetRequestStream();
+            requestStream.Write(buffer, 0, buffer.Length);
+            requestStream.Close();
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            var result = reader.ReadToEnd();
+        }
+
+        public void GetdeployLog()
+        {
+            var url = MonitorPackageUrl.Base_Url + MonitorPackageUrl.GetDeployLogsById_Url;
+            HttpWebRequest request = HttpWebRequest.CreateHttp(url);
+            request.Method = "GET";
+            request.ContentType = "application/json";
+            request.CookieContainer = cookieContainer;
+            BuildCookie();
+
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            var result = reader.ReadToEnd();
+
+        }
+
+        public void RemoveDeployLogs()
+        {
+            var url = MonitorPackageUrl.Base_Url + MonitorPackageUrl.RemoveDeployLogs_Url;
+            HttpWebRequest request = HttpWebRequest.CreateHttp(url);
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.CookieContainer = cookieContainer;
+            BuildCookie();
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendFormat("&{0}={1}", "cloudAppName", "PerformanceCloud");
+            stringBuilder.AppendFormat("&{0}={1}", "componentName", "ESB.Components.PerformanceCloud.PerformanceCloud");
+            stringBuilder.AppendFormat("&{0}={1}", "ips[]", "10.129.235.53 | BYVW-PPS-235-53");
+            stringBuilder.AppendFormat("&{0}={1}", "region", "PerformanceCloudNew");
+            stringBuilder.AppendFormat("&{0}={1}", "cluster", "PerformanceCloud");
+
+            byte[] buffer = Encoding.UTF8.GetBytes(stringBuilder.ToString().Trim('&'));
+            Stream requestStream = request.GetRequestStream();
+            requestStream.Write(buffer, 0, buffer.Length);
+            requestStream.Close();
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            var result = reader.ReadToEnd();
+        }
+
+        public void Hotfix()
+        {
+            var url = MonitorPackageUrl.Base_Url + MonitorPackageUrl.Hotfix_Url;
+            HttpWebRequest request = HttpWebRequest.CreateHttp(url);
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.CookieContainer = cookieContainer;
+            BuildCookie();
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendFormat("&{0}={1}", "cloudAppName", "PerformanceCloud");
+
+            byte[] buffer = Encoding.UTF8.GetBytes(stringBuilder.ToString().Trim('&'));
+            Stream requestStream = request.GetRequestStream();
+            requestStream.Write(buffer, 0, buffer.Length);
+            requestStream.Close();
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            var result = reader.ReadToEnd();
+        }
+
         /// <summary>
         /// 构建cookie，用于维护状态
         /// </summary>
@@ -90,6 +187,8 @@ namespace AutoBuildApp.Controllers
             cookieContainer.Add(new Uri("http://dev.mstools.beisen.net"), usernameCookie);
         }
 
+        
+
         class MonitorPackageUrl
         {
             public const string Base_Url = "http://dev.mstools.beisen.net";
@@ -100,16 +199,17 @@ namespace AutoBuildApp.Controllers
 
             public const string GetComponentsDetail_Url = "/Monitor/GetESBComponentDetails";
 
+            public const string GetJobVersionList_Url = "/Tool/GetJobVersionList?jobName=esb.Beisen.PerformanceCloud.ServiceImp";
+
             public const string GetESBComponentDetailStatus_Url = "/Monitor/GetESBComponentDetailStatus";
-        }
 
-        class LoginFormModel
-        {
-            public string username { get; set; }
-            public string password { get; set; }
-            public int logintype { get; set; }
-            public bool isremember { get; set; }
-        }
+            public const string UploadFileByShare_Url = "/Assistant/UploadFileByShare";
 
+            public const string GetDeployLogsById_Url = "/Monitor/GetDeployLogsById?deployId=3ae22e6b-2b04-4c9c-bff1-b50f544b8ae7&machineName=BYVW-PPS-235-53";
+
+            public const string RemoveDeployLogs_Url = "/RemoveDeployLogs";
+
+            public const string Hotfix_Url = "/Monitor/Hotfix";
+        }
     }
 }

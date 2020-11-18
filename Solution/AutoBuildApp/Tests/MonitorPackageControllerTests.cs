@@ -33,6 +33,18 @@ namespace AutoBuildApp.Tests
             MonitorPackageController.Instance.GetESBComponentDetailStatus();
         }
 
+        [TestMethod]
+        public void GetJobVersionListTest()
+        {
+            MonitorPackageController.Instance.GetJobVersionList();
+        }
+
+        [TestMethod]
+        public void GetdeployLogTest()
+        {
+            MonitorPackageController.Instance.GetdeployLog();
+        }
+
 
     }
 }
