@@ -176,6 +176,11 @@ namespace AutoBuildApp.Controllers
             var result = reader.ReadToEnd();
         }
 
+        public void Main()
+        {
+
+        }
+
         /// <summary>
         /// 构建cookie，用于维护状态
         /// </summary>
